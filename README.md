@@ -67,4 +67,16 @@ When trying to access a var that is not accessible, meaning it’s out of scope 
 ## Function call
 Calling the function, it’s that moment when you pass it arguments
 
+## Expression
+Can be a function, object, variable, anything that returns a value
+
+## One indexed loop
+A loop that starts at 1 instead of the usual 0
+
+## Falsy values
+false, 0, NaN, undefined, "", null
+
+## Strict equality operator
+===
+
 ```
