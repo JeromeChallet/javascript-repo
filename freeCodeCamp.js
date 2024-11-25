@@ -55,3 +55,34 @@ while (condition) {
   logic;
   condition = false;
 }
+
+//////////DOM SELECTOR//////////
+/* to select an element*/
+const button1 = document.querySelector("#button1");
+
+//////////ACCESS JS PROPERTY//////////
+/* you access JS property 2 ways, with dot notation and bracket notation []
+ */
+// onclick, when the element is clicked, the function is called
+button1.onclick = myFunction;
+// innerText controls the text appearing in the element
+const info = document.querySelector("#info");
+info.innerText = "hello";
+
+//////////OBEJCTS//////////
+/* you use access and modify their data through properties
+unlike arrays that you can access through indexes 
+the key is the name of the property and the value is the data stored in it
+if the key has a space you must use "", key-value pairs of objects use : not = 
+an object is defined with {} and doesn't need a name to exist
+*/
+const objName = {
+  name: "Jerome",
+  "Space name": "challet",
+};
+/* you use . notation when you know the name of the property you're trying to access ahead of time.
+you use [] notation if the name of the property you are trying to access has a space in it.*/
+console.log(objName.name);
+console.log(objName["Space name"]);
+
+84;

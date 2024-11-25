@@ -22,11 +22,14 @@ Giving it a name
 ## Initialization
 Assigning a value to a var
 
+## Mutable
+The data can change after it has been created
+
 ## Uninitialized
 Declared var without a value given
 
 ## Non-primitive
-Can hold more complex data
+Can hold more complex data, they are mutable
 
 ## Primitive data
 Can hold only 1 value at a time
@@ -78,5 +81,17 @@ false, 0, NaN, undefined, "", null
 
 ## Strict equality operator
 ===
+
+## Object
+Non primitive data types that hold key-value pairs
+
+## Indices
+numerical values that start at 0
+
+## Bracket notation
+myFunction(arg[0])
+
+## Compound assignment
+num += 5
 
 ```
