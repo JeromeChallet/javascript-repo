@@ -1,8 +1,9 @@
-//////////.length//////////
+//////////ARRAY//////////
+//.length
 //Retrieve the last element in an
 array[array.length] - 1;
 
-//////////.push()//////////
+//.push()
 /* Returns the new length of the array
  Add value at the end*/
 const countDown = [2, 1, 0];
@@ -10,28 +11,28 @@ let newLength = array.push(5);
 console.log(countDown); // [2, 1, 0, 5]
 console.log(newLength); // 4
 
-//////////.unshift()//////////
+//.unshift()
 /* Returns the new length of the array
 Add value at the beginning */
 newLength = countDown.unshift(3);
 console.log(countDown); // [3, 2, 1, 0, 5]
 console.log(newLength); // 5
 
-//////////.shift()//////////
+//.shift()
 /* Returns the new length of the array
 Remove value at the beginning */
 newLength = countDown.shift();
 console.log(countDown); // [2, 1, 0, 5]
 console.log(newLength); // 4
 
-//////////.pop()//////////
+//.pop()
 /* Returns the new length of the array
 Remove value at the end */
 newLength = countDown.pop();
 console.log(countDown); // [2, 1, 0]
 console.log(newLength); // 3
 
-//////////.repeat()//////////
+//.repeat()
 //Returns the new string by repeating the original string
 string.repeat();
 
@@ -85,4 +86,4 @@ you use [] notation if the name of the property you are trying to access has a s
 console.log(objName.name);
 console.log(objName["Space name"]);
 
-84;
+118;
