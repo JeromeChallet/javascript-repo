@@ -17,18 +17,36 @@ const mainTitleElement = document.getElementById("title");
 /* to select an element*/
 const button1 = document.querySelector("#button1");
 
+//.querySelectorAll()
+/* returns all the elements that match in a NodeList
+here will return all the p elements that has the class highlight*/
+const highlightedParagraphs = document.querySelectorAll("p.highlight");
+
+//.addEventListener()
+/* we use the function ref therefor no () 
+the 1st arg is the event to listen to and the 2nd is the action*/
+const button = document.querySelector('.btn');
+function printName() {
+  console.log("jerome");
+}
+button.addEventListener('click', printName);
+
 //////////ACCESS JS PROPERTY//////////
 /* you access JS property 2 ways, with dot notation and bracket notation []
 in JS when you assign a function to an event you only use the reference/name without the ()
 because if you used the () it would execute the function immediatly 
 */
 // onclick, when the element is clicked, the function is called
-// but it is the funciton reference there are no ()
+// but it is the function reference there are no ()
 button1.onclick = myFunction;
 
 // innerText controls the text appearing in the element
 const info = document.querySelector("#info");
 info.innerText = "hello";
+
+// .replace()
+/* replaces chars in strings with another */
+"hello".replace(/l/g, "1");
 
 //////////ARRAY//////////
 //.length
@@ -76,6 +94,12 @@ if (numbersArray.includes(number)) {
   console.log("The number is in the array.");
 }
 
+//.match()
+/* return an array of matched results */
+const str = "example string";
+const regex3 = /example/;
+const result = str.match(regex); // Returns ['example']
+
 //////////FOR LOOP//////////
 for (iterator; condition; iteration) {}
 
@@ -118,4 +142,17 @@ console.log(objName["Space name"]);
 //Math.floor() rounds to the nearest int
 Math.floor(Math.random() * 6) + 1;
 
-22;
+//////////REGEX//////////
+/* (regular expression) to match specific chars in a string 
+you must wrap around with [] the characters you want to match
+/s: empty space, /g:global(tell the pattern to keep looking until it finds a match)
+/i: if for all lower and upper case, + matches a pattern that occurs one or more times
+\d is the equivalent of [0-9]*/
+const regex = /[+-\s]/;
+const regex2 = /[0-9]+e[0-9]+/i;
+
+// '' vs "" always put "" inside ''
+('input[type="text"]');
+
+// HTML attributes values need to be wrapped in "" when in JS
+<label for="${entryDropdown.value}-${entryNumber}-name">Entry ${entryNumber} Name</label>`;

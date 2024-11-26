@@ -106,7 +106,12 @@ The code is trying to perform an operation on a value that is not of the expecte
 ## Prefixing with is and has
 Common practice to indicate the var is a bool
 
-## regex (regular expression) to match specific chars in a string
-const regex = /\+-/
+## null
+the abscence of value
+
+## NodeList
+array like object
+
+54
 
 ```
