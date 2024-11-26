@@ -97,4 +97,16 @@ num += 5
 ## Ternary operator
 condition ? expressionIfTrue : expressionIfFalse
 
+## Reference Error
+when a non existant var is referenced
+
+## Type Error
+The code is trying to perform an operation on a value that is not of the expected type
+
+## Prefixing with is and has
+Common practice to indicate the var is a bool
+
+## regex (regular expression) to match specific chars in a string
+const regex = /\+-/
+
 ```

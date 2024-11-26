@@ -1,4 +1,5 @@
-//////////STYLE//////////
+//////////DOM SELECTOR//////////
+//.style.display()
 /* to define a style property use .style
 then define the property itself in this case how to display */
 const paragraph = document.querySelector("p");
@@ -6,6 +7,28 @@ paragraph.style.display = "block";
 
 //.innerHTML allows to modify the content inside an HTML element
 document.querySelector("#demo").innerHTML = "hello";
+
+// .getElementById()
+/* to access a precise element from the DOM */
+<h1 id="title">Main title</h1>;
+const mainTitleElement = document.getElementById("title");
+
+//.querySelector()
+/* to select an element*/
+const button1 = document.querySelector("#button1");
+
+//////////ACCESS JS PROPERTY//////////
+/* you access JS property 2 ways, with dot notation and bracket notation []
+in JS when you assign a function to an event you only use the reference/name without the ()
+because if you used the () it would execute the function immediatly 
+*/
+// onclick, when the element is clicked, the function is called
+// but it is the funciton reference there are no ()
+button1.onclick = myFunction;
+
+// innerText controls the text appearing in the element
+const info = document.querySelector("#info");
+info.innerText = "hello";
 
 //////////ARRAY//////////
 //.length
@@ -74,20 +97,7 @@ while (condition) {
   condition = false;
 }
 
-//////////DOM SELECTOR//////////
-/* to select an element*/
-const button1 = document.querySelector("#button1");
-
-//////////ACCESS JS PROPERTY//////////
-/* you access JS property 2 ways, with dot notation and bracket notation []
- */
-// onclick, when the element is clicked, the function is called
-button1.onclick = myFunction;
-// innerText controls the text appearing in the element
-const info = document.querySelector("#info");
-info.innerText = "hello";
-
-//////////OBEJCTS//////////
+//////////OBJECTS//////////
 /* you use access and modify their data through properties
 unlike arrays that you can access through indexes 
 the key is the name of the property and the value is the data stored in it
@@ -107,3 +117,5 @@ console.log(objName["Space name"]);
 // Math.random() generate a random number from 0 to 1
 //Math.floor() rounds to the nearest int
 Math.floor(Math.random() * 6) + 1;
+
+22;
