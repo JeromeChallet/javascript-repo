@@ -94,4 +94,7 @@ myFunction(arg[0])
 ## Compound assignment
 num += 5
 
+## Ternary operator
+condition ? expressionIfTrue : expressionIfFalse
+
 ```

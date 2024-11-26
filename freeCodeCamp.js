@@ -1,3 +1,12 @@
+//////////STYLE//////////
+/* to define a style property use .style
+then define the property itself in this case how to display */
+const paragraph = document.querySelector("p");
+paragraph.style.display = "block";
+
+//.innerHTML allows to modify the content inside an HTML element
+document.querySelector("#demo").innerHTML = "hello";
+
 //////////ARRAY//////////
 //.length
 //Retrieve the last element in an
@@ -35,6 +44,14 @@ console.log(newLength); // 3
 //.repeat()
 //Returns the new string by repeating the original string
 string.repeat();
+
+//.includes()
+/* determines if the elemente is in the array */
+const numbersArray = [1, 2, 3, 4, 5];
+const number = 3;
+if (numbersArray.includes(number)) {
+  console.log("The number is in the array.");
+}
 
 //////////FOR LOOP//////////
 for (iterator; condition; iteration) {}
@@ -86,4 +103,7 @@ you use [] notation if the name of the property you are trying to access has a s
 console.log(objName.name);
 console.log(objName["Space name"]);
 
-118;
+// Math Object in JS offers many methods
+// Math.random() generate a random number from 0 to 1
+//Math.floor() rounds to the nearest int
+Math.floor(Math.random() * 6) + 1;
