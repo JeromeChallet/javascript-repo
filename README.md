@@ -112,6 +112,7 @@ the abscence of value
 ## NodeList
 array like object
 
-54
+## Global error flag
+ A variable used to keep track of whether an error has occurred during program execution.
 
 ```
