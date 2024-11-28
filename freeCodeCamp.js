@@ -100,17 +100,6 @@ form.addEventListener("submit", function (event) {
 });
 
 // ======================================
-// 3. ADDITIONAL NOTES
-// ======================================
-
-/////// .toLowerCase() ///////
-/* Converts a string to lowercase letters. */
-
-// Example:
-const str2 = "HELLO, WORLD!";
-console.log(str.toLowerCase()); // Output: "hello, world!"
-
-// ======================================
 // 4. ARRAY
 // ======================================
 /////// .length ///////
@@ -151,12 +140,25 @@ console.log(newLength); // 3
 string.repeat();
 
 /////// .includes() ///////
-/* determines if the elemente is in the array */
+/* determines if the element is in the array */
 const numbersArray = [1, 2, 3, 4, 5];
 const number = 3;
 if (numbersArray.includes(number)) {
   console.log("The number is in the array.");
 }
+
+/////// ... ///////
+/* Copy all elements from one array into another
+or concatenate multiple arrays into one */
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const combinedArr = [...arr1, ...arr2];
+console.log(combinedArr); // Output: [1, 2, 3, 4, 5, 6]
+
+/////// map ///////
+/* Iterates through an array and return a new array */
+const numbers = [1, 2, 3];
+const doubledNumbers = numbers.map((number) => number * 2); // [2, 4, 6]
 
 // ======================================
 // 5. LOOPS
@@ -185,7 +187,24 @@ while (condition) {
 // ======================================
 // 6. FUNCTION
 // ======================================
+/////// Regular Function ///////
 function name(parameter) {}
+
+/////// Arrow Function ///////
+/* anonymous function expression, it has no name 
+You can reference the function by its name
+you can omit the () if it has 1 parameter
+Implicit return is returning a simple expression, 
+you can omit the return keyword and the curly braces {}*/
+const nameArrowFunction = (name) => {
+  console.log(`Hello, ${name}!`);
+};
+nameArrowFunction();
+
+/////// Callback Function ///////
+/* A function that is passed to another function as an argument,
+in this case an arrow function */
+const tripleNumbers = numbers.map((number) => number * 3);
 
 // ======================================
 // 7. OBJECTS
@@ -250,6 +269,13 @@ const result = str.match(regex); // Returns ['example']
 
 // if an if statement returns a value you do not need an else
 
+/////// .toLowerCase() ///////
+/* Converts a string to lowercase letters. */
+
+// Example:
+const str2 = "HELLO, WORLD!";
+console.log(str.toLowerCase()); // Output: "hello, world!"
+
 // ======================================
 // 10. USER INTERACTION
 // ======================================
@@ -281,3 +307,10 @@ console.log(Number("10")); // 10
 console.log(Number("abc")); // NaN
 console.log(Number(true)); // 1
 console.log(Number(false)); // 0
+
+// ======================================
+// 11. HTML ELEMENT
+// ======================================
+/////// Audio() ///////
+/* creates an audio element */
+const audio = new Audio();

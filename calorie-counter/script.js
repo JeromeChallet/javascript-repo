@@ -17,6 +17,7 @@ function isInvalidInput(str) {
 }
 
 function addEntry() {
+  // the space means .input-container is a descendant at some level of entryDropdown.value
   const targetInputContainer = document.querySelector(
     `#${entryDropdown.value} .input-container`
   );
