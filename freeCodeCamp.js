@@ -47,7 +47,7 @@ faster than using innerHTML because it preserves existing DOM nodes, unlike inne
 element.insertAdjacentHTML(position, text);
 
 /////// .classList ///////
-/* provides a convenient way to interact with the class attribute of an HTML element 
+/* Provides a convenient way to interact with the class attribute of an HTML element 
 - add: Add a specific class from an element's class list.
 - remove: Removes a specific class from an element's class list.
 - toggle: Toggle a specific class from an element's class list.
@@ -56,6 +56,25 @@ element.insertAdjacentHTML(position, text);
 const element2 = document.getElementById("myElement");
 element2.classList.add("hide"); // Adds the class "hide"
 element2.classList.remove("hide");
+
+/////// .removeAttribute() ///////
+/* Remove a specified attribute from an HTML element */
+element.removeAttribute(attributeName);
+// HTML: <div id="myDiv" class="container" hidden></div>
+const div = document.getElementById("myDiv");
+div.removeAttribute("hidden"); // Removes the 'hidden' attribute
+console.log(div.outerHTML); // <div id="myDiv" class="container"></div>
+
+/////// .setAttribute() ///////
+/* add a specified attribute from an HTML element */
+div.setAttribute("hidden"); // add the 'hidden' attribute
+console.log(div.outerHTML);
+
+/////// .textContent ///////
+/* sets the text of a node and allows you to set or retrieve the text content of an HTML element */
+<div id="example">This is some text content</div>;
+const element3 = document.getElementById("example");
+console.log(element3.textContent); // Output: This is some text content
 
 // ======================================
 // 2. ACCESS JS PROPERTY
@@ -182,6 +201,10 @@ Select all <li> elements and convert them into an array */
 const listItemsArray = Array.from(document.querySelectorAll("li"));
 console.log(listItemsArray);
 
+/////// .indexOf() ///////
+/* returns the first index at which a given element can be found in the array */
+names.indexOf("Jessica"); // 1
+
 // ======================================
 // 5. LOOPS
 // ======================================
@@ -205,6 +228,12 @@ while (condition) {
   logic;
   condition = false;
 }
+
+/////// For Each loop ///////
+/* loop through an array and perform a function on each element of the array */
+numbers1.forEach((number) => {
+  console.log(number); // 10, 20, 30, 40, 50
+});
 
 // ======================================
 // 6. FUNCTION
