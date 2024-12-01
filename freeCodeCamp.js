@@ -46,20 +46,16 @@ Specifies the position relative to the element where the HTML will be inserted
 faster than using innerHTML because it preserves existing DOM nodes, unlike innerHTML which replaces them*/
 element.insertAdjacentHTML(position, text);
 
-/////// .remove() ///////
-/* Removes a specific class from an element's class list. */
-element.classList.remove("hide");
-
-/////// .add() ///////
-/* Removes a specific class from an element's class list. */
-element.classList.add("hide");
-
-/////// Array.from() ///////
-/* querySelectorAll() returns a NodeList, which can be converted into a true array using Array.from().
-This allows to use array methods like map, filter, etc.
-Select all <li> elements and convert them into an array */
-const listItemsArray = Array.from(document.querySelectorAll("li"));
-console.log(listItemsArray);
+/////// .classList ///////
+/* provides a convenient way to interact with the class attribute of an HTML element 
+- add: Add a specific class from an element's class list.
+- remove: Removes a specific class from an element's class list.
+- toggle: Toggle a specific class from an element's class list.
+- contains: Contains a specific class from an element's class list.
+*/
+const element2 = document.getElementById("myElement");
+element2.classList.add("hide"); // Adds the class "hide"
+element2.classList.remove("hide");
 
 // ======================================
 // 2. ACCESS JS PROPERTY
@@ -155,10 +151,36 @@ const arr2 = [4, 5, 6];
 const combinedArr = [...arr1, ...arr2];
 console.log(combinedArr); // Output: [1, 2, 3, 4, 5, 6]
 
-/////// map ///////
+/////// .map() ///////
 /* Iterates through an array and return a new array */
 const numbers = [1, 2, 3];
 const doubledNumbers = numbers.map((number) => number * 2); // [2, 4, 6]
+
+/////// .join() ///////
+/* Concatenate all the elements of an array into a single string
+It takes an optional parameter called a separator which is used to separate each element of the array */
+const exampleArr = ["This", "is", "a", "sentence"];
+const sentence = exampleArr.join(" "); // Separator takes a space character
+console.log(sentence); // Output: "This is a sentence"
+
+/////// .sort() ///////
+/* converts elements of an array into strings and sorts them in place based on their values in the UTF-16 encoding */
+const names = ["Tom", "Jessica", "Quincy", "Naomi"];
+names.sort(); // ["Jessica", "Naomi", "Quincy", "Tom"]
+
+/////// .find() ///////
+/* retrieves the first element within an array that fulfills the conditions specified in the provided callback function. 
+If no element satisfies the condition, the method returns undefined */
+const numbers1 = [10, 20, 30, 40, 50];
+// Find the first number greater than 25
+const foundNumber = numbers1.find((number) => number > 25);
+
+/////// Array.from() ///////
+/* querySelectorAll() returns a NodeList, which can be converted into a true array using Array.from().
+This allows to use array methods like map, filter, etc.
+Select all <li> elements and convert them into an array */
+const listItemsArray = Array.from(document.querySelectorAll("li"));
+console.log(listItemsArray);
 
 // ======================================
 // 5. LOOPS
@@ -205,6 +227,36 @@ nameArrowFunction();
 /* A function that is passed to another function as an argument,
 in this case an arrow function */
 const tripleNumbers = numbers.map((number) => number * 3);
+
+/////// Compare Callback Function ///////
+/* Sorts alphabetically */
+const fruits = [
+  { name: "Apples", price: 0.99 },
+  { name: "Blueberries", price: 1.49 },
+  { name: "Grapes", price: 2.99 },
+];
+
+fruits.sort((a, b) => {
+  if (a.name < b.name) {
+    return -1; // a should come before b
+  } else if (a.name > b.name) {
+    return 1; // a should come after b
+  } else {
+    return 0; // a and b are equal
+  }
+});
+
+/////// Optional Chaning ///////
+/* helps prevent errors when accessing nested properties that might be null or undefined */
+const user = {
+  name: "Quincy",
+  address: {
+    city: "San Francisco",
+    state: "CA",
+    country: "USA",
+  },
+};
+const zipCode = user.address?.zipCode; // undefined instead of error
 
 // ======================================
 // 7. OBJECTS
@@ -275,6 +327,16 @@ const result = str.match(regex); // Returns ['example']
 // Example:
 const str2 = "HELLO, WORLD!";
 console.log(str.toLowerCase()); // Output: "hello, world!"
+
+/* Parameters in JavaScript are implicitly declared when a function is called. 
+You don’t need to explicitly declare them with let or const 
+The for loop is a low-level, general-purpose iteration tool. 
+It doesn't know in advance what kind of operation you're performing (like searching for a specific element or summing up values), 
+so you have to explicitly control the iteration. */
+function greet(name) {
+  console.log(`Hello, ${name}!`);
+}
+const foundNumber2 = numbers1.find((number) => number > 25);
 
 // ======================================
 // 10. USER INTERACTION
