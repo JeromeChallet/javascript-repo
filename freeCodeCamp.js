@@ -66,15 +66,42 @@ div.removeAttribute("hidden"); // Removes the 'hidden' attribute
 console.log(div.outerHTML); // <div id="myDiv" class="container"></div>
 
 /////// .setAttribute() ///////
-/* add a specified attribute from an HTML element */
-div.setAttribute("hidden"); // add the 'hidden' attribute
+/* add a specified attribute from an HTML element 
+The first parameter is the name of the attribute
+the second parameter is the value you want to set for that attribute*/
+div.setAttribute("hidden", ""); // add the 'hidden' attribute
 console.log(div.outerHTML);
 
 /////// .textContent ///////
-/* sets the text of a node and allows you to set or retrieve the text content of an HTML element */
+/* Sets the text of a node and allows you to set or retrieve the text content of an HTML element */
 <div id="example">This is some text content</div>;
 const element3 = document.getElementById("example");
 console.log(element3.textContent); // Output: This is some text content
+
+/////// createElement() ///////
+/* Used to dynamically create an element using JavaScript */
+document.createElement(tagName);
+document.createElement("div");
+const divElement = document.createElement("div");
+
+/////// createTextNode() ///////
+/*  Creates a text node which represents the text content within an HTML element*/
+document.createTextNode("your text");
+const myText = document.createTextNode("your text");
+
+/////// element.id ///////
+/*  Set an id attribute to an element*/
+resetButton.id = "reset";
+
+/////// element.ariaLabel ///////
+/*  Set an aria-label attribute to an element*/
+resetButton.resetButton.ariaLabel = "Reset playlist";
+
+/////// appendChild() ///////
+/*   Add a node or an element as the child of another element*/
+const parentElement = document.createElement("button");
+const parentElementText = document.createTextNode("Click me");
+parentElement.appendChild(parentElementText); // attach the text "Click me" to the button
 
 // ======================================
 // 2. ACCESS JS PROPERTY
@@ -183,12 +210,12 @@ const sentence = exampleArr.join(" "); // Separator takes a space character
 console.log(sentence); // Output: "This is a sentence"
 
 /////// .sort() ///////
-/* converts elements of an array into strings and sorts them in place based on their values in the UTF-16 encoding */
+/* Converts elements of an array into strings and sorts them in place based on their values in the UTF-16 encoding */
 const names = ["Tom", "Jessica", "Quincy", "Naomi"];
 names.sort(); // ["Jessica", "Naomi", "Quincy", "Tom"]
 
 /////// .find() ///////
-/* retrieves the first element within an array that fulfills the conditions specified in the provided callback function. 
+/* Retrieves the first element within an array that fulfills the conditions specified in the provided callback function. 
 If no element satisfies the condition, the method returns undefined */
 const numbers1 = [10, 20, 30, 40, 50];
 // Find the first number greater than 25
@@ -202,8 +229,14 @@ const listItemsArray = Array.from(document.querySelectorAll("li"));
 console.log(listItemsArray);
 
 /////// .indexOf() ///////
-/* returns the first index at which a given element can be found in the array */
+/* Returns the first index at which a given element can be found in the array */
 names.indexOf("Jessica"); // 1
+
+/////// .filter() ///////
+/* Keeps only the elements of an array that satisfy the callback function passed to it */
+const numArr = [1, 10, 8, 3, 4, 5];
+const numsGreaterThanThree = numArr.filter((num) => num > 3);
+console.log(numsGreaterThanThree); // Output: [10, 8, 4, 5]
 
 // ======================================
 // 5. LOOPS
@@ -317,6 +350,11 @@ Math.floor(Math.random() * 6) + 1;
 The absolute value is always non-negative. */
 const num = -5;
 Math.abs(num); // 5
+
+/////// Math.sort() ///////
+/*  Produces random values that are either positive or negative. */
+const names2 = ["Tom", "Jessica", "Quincy", "Naomi"];
+names.sort(() => Math.random() - 0.5);
 
 // ======================================
 // 8. Regular Expressions

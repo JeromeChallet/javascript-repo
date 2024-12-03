@@ -116,5 +116,3 @@ array like object
  A variable used to keep track of whether an error has occurred during program execution.
 
 ```
-
-74
