@@ -17,7 +17,7 @@ document.querySelector("#demo").innerHTML = "hello";
 const mainTitleElement = document.getElementById("title");
 
 /////// .querySelector() ///////
-/* to select an element*/
+/*  select and return the first element in the DOM that matches */
 const button1 = document.querySelector("#button1");
 const element = document.querySelector(".my-element");
 
@@ -308,7 +308,7 @@ fruits.sort((a, b) => {
   }
 });
 
-/////// Optional Chaning ///////
+/////// Optional Chaining ///////
 /* helps prevent errors when accessing nested properties that might be null or undefined */
 const user = {
   name: "Quincy",

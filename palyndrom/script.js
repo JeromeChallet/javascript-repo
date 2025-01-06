@@ -1,3 +1,28 @@
+const textInput = document.getElementById("text-input");
+const checkBtn = document.getElementById("check-btn");
+const result = document.getElementById("result");
+
+checkBtn.addEventListener("click", checkInput);
+
+function checkInput() {
+  const originalInput = textInput.value;
+  const cleanedInput = originalInput.toLowerCase().replace(/[\s\p{P}]/gu, "");
+  result.classList.remove("hidden");
+  if (checkPalindrom(cleanedInput)) {
+    result.textContent = `${cleanedInput} is a palindrome`;
+  } else {
+    result.textContent = `${cleanedInput} is not a palindrome`;
+  }
+}
+
+function checkPalindrom(str) {
+  return str === str.split("").reverse().join("");
+}
+
+// 1. convert the string into an array of char
+// 2. revert its order
+// 3. compare that new array to the orginal one
+
 /* A palindrome is a word or phrase that can be read the same way forwards and backwards, ignoring punctuation, case, and spacing.
 
 Note: You'll need to remove all non-alphanumeric characters (punctuation, spaces and symbols) and turn everything into the same case (lower or upper case) in order to check for palindromes.
