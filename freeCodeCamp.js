@@ -141,6 +141,8 @@ form.addEventListener("submit", function (event) {
   console.log("Form submission prevented!");
 });
 
+//
+
 // ======================================
 // 4. ARRAY
 // ======================================
@@ -238,6 +240,16 @@ const numArr = [1, 10, 8, 3, 4, 5];
 const numsGreaterThanThree = numArr.filter((num) => num > 3);
 console.log(numsGreaterThanThree); // Output: [10, 8, 4, 5]
 
+/////// .reverse() ///////
+/* The first element becomes the last, and the last element becomes the first */
+[1, 2, 3, 4, 5].reverse(); // returns [5, 4, 3, 2, 1]
+
+/////// .split() ///////
+/* divide a string into substrings based on a specified separator. It then returns these substrings as elements of an array.
+It takes in a parameter known as a separator. The separator is used to tell the computer where each split should occur */
+const greeting = "Hello World";
+greeting.split("W"); // ["Hello ", "orld"]
+
 // ======================================
 // 5. LOOPS
 // ======================================
@@ -268,6 +280,18 @@ numbers1.forEach((number) => {
   console.log(number); // 10, 20, 30, 40, 50
 });
 
+/////// Switch ///////
+switch (dayOfWeek) {
+  case 1:
+    console.log("It's Monday!");
+    break;
+  case 2:
+    console.log("It's Tuesday!");
+    break;
+  // ...cases for other workdays
+  default:
+    console.log("It's the weekend!");
+}
 // ======================================
 // 6. FUNCTION
 // ======================================
@@ -357,7 +381,62 @@ const names2 = ["Tom", "Jessica", "Quincy", "Naomi"];
 names.sort(() => Math.random() - 0.5);
 
 // ======================================
-// 8. Regular Expressions
+// 8. OBJECT ORIENTED JAVASCRIPT
+// ======================================
+/////// Constructor ///////
+/* A a function that is invoked when creating an instance of an object using the new keyword 
+to initialize the properties and methods of the object. They don't directly create the object.
+The creation of the object is handled by the new keyword. The constructor initializes the object
+The this keyword inside the constructor refers to the new object
+*/
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  greet() {
+    console.log(`Hi, my name is ${this.name} and I am ${this.age} years old.`);
+  }
+}
+
+const person1 = new Person("Alice", 30);
+const person2 = new Person("Bob", 25);
+
+person1.greet(); // Hi, my name is Alice and I am 30 years old.
+person2.greet(); // Hi, my name is Bob and I am 25 years old.
+
+/* If you don't define a constructor in a class, JavaScript provides a default constructor that does nothing but return the instance */
+function Person2(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+Person2.prototype.greet = function () {
+  console.log(`Hi, my name is ${this.name} and I am ${this.age} years old.`);
+};
+
+const person3 = new Person2("Alice", 30);
+person1.greet(); // Output: Hi, my name is Alice and I am 30 years old.
+
+/////// Date Constructor ///////
+/* built in JS object that has its own methods */
+const currentDate = new Date();
+console.log(currentDate);
+// getDate returns the day
+const dayOfTheMonth = date.getDate(); // return a nb between 0 and 31
+console.log(dayOfTheMonth);
+// getMonth returns the month
+const month = date.getMonth() + 1;
+// getFullYear returns the year
+const year = date.getFullYear();
+// getHours returns the hour
+const hours = date.getHours();
+// getMinutes returns the minutes
+const minutes = date.getMinutes();
+
+// ======================================
+// 9. Regular Expressions
 // ======================================
 /* Regular expressions match specific characters in a string.
 Wrap the characters you want to match with [].
@@ -376,7 +455,7 @@ const regex3 = /example/;
 const result = str.match(regex); // Returns ['example']
 
 // ======================================
-// 9. Additional Notes
+// 10. Additional Notes
 // ======================================
 // '' vs "" always put "" inside ''
 ('input[type="text"]');
@@ -406,7 +485,7 @@ function greet(name) {
 const foundNumber2 = numbers1.find((number) => number > 25);
 
 // ======================================
-// 10. USER INTERACTION
+// 11. USER INTERACTION
 // ======================================
 
 /////// alert() ///////
@@ -423,8 +502,12 @@ button.addEventListener("click", () => {
   alert("Button was clicked!");
 });
 
+// Change event
+/* detects when the value of an HTML element has changed */
+htmlElement.addEventListener("change", () => {});
+
 // ======================================
-// 11. DATA TYPE CONVERSION
+// 12. DATA TYPE CONVERSION
 // ======================================
 
 /////// Number() ///////
@@ -438,7 +521,7 @@ console.log(Number(true)); // 1
 console.log(Number(false)); // 0
 
 // ======================================
-// 11. HTML ELEMENT
+// 13. HTML ELEMENT
 // ======================================
 /////// Audio() ///////
 /* creates an audio element */
