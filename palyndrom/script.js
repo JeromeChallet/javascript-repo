@@ -8,17 +8,20 @@ function checkInput() {
   const originalInput = textInput.value;
   const cleanedInput = originalInput.toLowerCase().replace(/[\s\p{P}]/gu, "");
   result.classList.remove("hidden");
-  if (checkPalindrom(cleanedInput)) {
-    result.textContent = `${cleanedInput} is a palindrome`;
+  if (originalInput.length !== 0) {
+    if (checkPalindrom(cleanedInput)) {
+      result.textContent = `${originalInput} is a palindrome`;
+    } else {
+      result.textContent = `${originalInput} is not a palindrome`;
+    }
   } else {
-    result.textContent = `${cleanedInput} is not a palindrome`;
+    alert("Please input a value");
   }
 }
 
 function checkPalindrom(str) {
   return str === str.split("").reverse().join("");
 }
-
 // 1. convert the string into an array of char
 // 2. revert its order
 // 3. compare that new array to the orginal one
