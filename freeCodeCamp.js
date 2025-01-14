@@ -380,6 +380,23 @@ Math.abs(num); // 5
 const names2 = ["Tom", "Jessica", "Quincy", "Naomi"];
 names.sort(() => Math.random() - 0.5);
 
+/////// Object.freeze(obj) ///////
+/* freezes the object and prevent any changes being made to it 
+Properties cannot be added or removed.
+Existing properties cannot be changed.
+The prototype of the object cannot be modified.*/
+const objFrozen = {
+  name: "Jerome",
+  age: 38,
+};
+Object.freeze(obj);
+objFrozen.age = 40; // This will not work (silently fails in non-strict mode or throws an error in strict mode)
+console.log(objFrozen.age); // Output: 38
+objFrozen.newProp = "test"; // Cannot add new properties
+console.log(objFrozen.newProp); // Output: undefined
+delete objFrozen.name; // Cannot delete properties
+console.log(objFrozen.name); // Output: "Jerome"
+
 // ======================================
 // 8. OBJECT ORIENTED JAVASCRIPT
 // ======================================
@@ -434,6 +451,16 @@ const year = date.getFullYear();
 const hours = date.getHours();
 // getMinutes returns the minutes
 const minutes = date.getMinutes();
+
+///////  Object Destructuring ///////
+/* Unpack values from arrays and objects 
+this assume you know well the state of the object
+it saves time instead of assigning with dot notation*/
+const destructuredObj = {
+  name: "Jerome",
+  isDeveloper: true,
+};
+const { name, isDeveloper } = destructuredObj;
 
 // ======================================
 // 9. Regular Expressions
