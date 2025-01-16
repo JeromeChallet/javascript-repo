@@ -50,12 +50,26 @@ element.insertAdjacentHTML(position, text);
 /* Provides a convenient way to interact with the class attribute of an HTML element 
 - add: Add a specific class from an element's class list.
 - remove: Removes a specific class from an element's class list.
-- toggle: Toggle a specific class from an element's class list.
+- toggle: Add the class if it is not present on the element, and remove the class if it is present on the element.
 - contains: Contains a specific class from an element's class list.
 */
 const element2 = document.getElementById("myElement");
 element2.classList.add("hide"); // Adds the class "hide"
 element2.classList.remove("hide");
+element2.classList.toggle("class-to-toggle");
+
+/////// .close() ///////
+/* The close() method is used to close an <dialog> HTML element (modal dialog box). */
+const dialogElement = document.getElementById("exampleDialog");
+dialogElement.showModal(); // Open the dialog
+dialogElement.close(); // Close the dialog programmatically
+
+/* The reason why the action of an event listener must be in a callback function is because we can reuse it multiple times */
+const handleClick = () => {
+  taskForm.classList.toggle("hidden");
+};
+
+openTaskFormBtn.addEventListener("click", handleClick);
 
 /////// .removeAttribute() ///////
 /* Remove a specified attribute from an HTML element */
