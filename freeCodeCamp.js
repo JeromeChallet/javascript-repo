@@ -392,7 +392,7 @@ Math.abs(num); // 5
 /////// Math.sort() ///////
 /*  Produces random values that are either positive or negative. */
 const names2 = ["Tom", "Jessica", "Quincy", "Naomi"];
-names.sort(() => Math.random() - 0.5);
+names2.sort(() => Math.random() - 0.5);
 
 /////// Object.freeze(obj) ///////
 /* freezes the object and prevent any changes being made to it 
@@ -403,7 +403,7 @@ const objFrozen = {
   name: "Jerome",
   age: 38,
 };
-Object.freeze(obj);
+Object.freeze(objFrozen);
 objFrozen.age = 40; // This will not work (silently fails in non-strict mode or throws an error in strict mode)
 console.log(objFrozen.age); // Output: 38
 objFrozen.newProp = "test"; // Cannot add new properties
@@ -415,7 +415,7 @@ console.log(objFrozen.name); // Output: "Jerome"
 // 8. OBJECT ORIENTED JAVASCRIPT
 // ======================================
 /////// Constructor ///////
-/* A a function that is invoked when creating an instance of an object using the new keyword 
+/* A function that is invoked when creating an instance of an object using the new keyword 
 to initialize the properties and methods of the object. They don't directly create the object.
 The creation of the object is handled by the new keyword. The constructor initializes the object
 The this keyword inside the constructor refers to the new object
@@ -437,18 +437,21 @@ const person2 = new Person("Bob", 25);
 person1.greet(); // Hi, my name is Alice and I am 30 years old.
 person2.greet(); // Hi, my name is Bob and I am 25 years old.
 
-/* If you don't define a constructor in a class, JavaScript provides a default constructor that does nothing but return the instance */
+/* If you don't define a constructor in a class, JavaScript provides a default constructor 
+that does nothing but return the instance */
 function Person2(name, age) {
   this.name = name;
   this.age = age;
 }
 
+/* Prototype is a built-in property that every function (used as a constructor) has. 
+It's used to attach methods or properties that should be shared across all instances created by that constructor. */
 Person2.prototype.greet = function () {
   console.log(`Hi, my name is ${this.name} and I am ${this.age} years old.`);
 };
 
 const person3 = new Person2("Alice", 30);
-person1.greet(); // Output: Hi, my name is Alice and I am 30 years old.
+person3.greet(); // Output: Hi, my name is Alice and I am 30 years old.
 
 /////// Date Constructor ///////
 /* built in JS object that has its own methods */
@@ -510,8 +513,6 @@ const result = str.match(regex); // Returns ['example']
 
 /////// .toLowerCase() ///////
 /* Converts a string to lowercase letters. */
-
-// Example:
 const str2 = "HELLO, WORLD!";
 console.log(str.toLowerCase()); // Output: "hello, world!"
 
