@@ -155,7 +155,14 @@ form.addEventListener("submit", function (event) {
   console.log("Form submission prevented!");
 });
 
-//
+/////// localStorage.setItem() ///////
+/////// localStorage.getItem() ///////
+/////// localStorage.removeItem() ///////
+/////// localStorage.clear() ///////
+/* they store only strings, has a storage limit of about 5mb and is synchronous  
+You need JSON.stringify() and JSON.parse() for objects and arrays */
+localStorage.setItem("key", value);
+localStorage.setItem("key", JSON.stringify(value));
 
 // ======================================
 // 4. ARRAY
@@ -264,6 +271,25 @@ It takes in a parameter known as a separator. The separator is used to tell the 
 const greeting = "Hello World";
 greeting.split("W"); // ["Hello ", "orld"]
 
+/////// .findIndex() ///////
+/* returns the first index found in the array if not found then returns -1 
+It expect a callback function as an argument*/
+const numbers2 = [3, 1, 5, 6];
+const firstNumLargerThanThree = numbers2.findIndex((num) => num > 3);
+
+console.log(firstNumLargerThanThree); // prints index 2
+
+/////// .splice() ///////
+/* modifies arrays by removing, replacing, or adding elements at a specified index, while also returning the removed elements
+Can take up to 3 arguments: the first is the mandatory index at which to start, the second is the number of items to remove, and the third is an optional replacement element */
+const fruits2 = ["mango", "date", "cherry", "banana", "apple"];
+
+// Remove date and cherry from the array starting at index 1
+const removedFruits = fruits2.splice(1, 2);
+
+console.log(fruits2); // [ 'mango', 'banana', 'apple' ]
+console.log(removedFruits); // [ 'date', 'cherry' ]
+
 // ======================================
 // 5. LOOPS
 // ======================================
@@ -293,6 +319,9 @@ while (condition) {
 numbers1.forEach((number) => {
   console.log(number); // 10, 20, 30, 40, 50
 });
+
+/* to desctructure the date to be used, use {} in the param() */
+taskData.forEach(({ id, title, date, description }) => {});
 
 /////// Switch ///////
 switch (dayOfWeek) {
@@ -512,7 +541,8 @@ const result = str.match(regex); // Returns ['example']
 // if an if statement returns a value you do not need an else
 
 /////// .toLowerCase() ///////
-/* Converts a string to lowercase letters. */
+/* Converts a string to lowercase letters. 
+It is a method of string objects, not a standalone global function so you can't put the string to convert into the ()*/
 const str2 = "HELLO, WORLD!";
 console.log(str.toLowerCase()); // Output: "hello, world!"
 
