@@ -29,7 +29,7 @@ const highlightedParagraphs = document.querySelectorAll("p.highlight");
 /////// .addEventListener() ///////
 /* we use the function ref therefor no () 
 the 1st arg is the event to listen to and the 2nd is the action
-- click
+- click, keydown
 - submit: when a form is submitted usually used with <form>
 */
 const button = document.querySelector(".btn");
@@ -38,6 +38,13 @@ function printName() {
 }
 button.addEventListener("click", printName);
 calorieCounter.addEventListener("submit", calculateCalories);
+
+// whenever used it creates an object we can access for its info it is the e in (e)
+numberInput.addEventListener("keydown", (e) => {
+  console.log(e);
+  if (e.key === "Enter") {
+  }
+});
 
 /////// .insertAdjacentHTML() ///////
 /* insert HTML content into the DOM tree at a specified position relative to an existing element 
@@ -163,6 +170,18 @@ form.addEventListener("submit", function (event) {
 You need JSON.stringify() and JSON.parse() for objects and arrays */
 localStorage.setItem("key", value);
 localStorage.setItem("key", JSON.stringify(value));
+
+/////// parseInt() ///////
+/* Converts a string into an integer, whole number or NaN*/
+parseInt(2.2); // 2
+parseInt("2e+3"); // 2
+parseInt("e"); // NaN
+
+/////// isNaN() ///////
+/* check if the value returned is a number or not */
+isNaN("test"); // true
+isNaN(2); // false
+isNaN("3.5"); // false
 
 // ======================================
 // 4. ARRAY
@@ -387,6 +406,26 @@ const user = {
 };
 const zipCode = user.address?.zipCode; // undefined instead of error
 
+/////// Recursive function ///////
+/* The function calls itself, it needs a base case to get out of it
+and a recursive case where the function calls itself */
+const recursiveFunction = (number) => {
+  // base case
+  if (number === 0) {
+    return;
+    // recursive case
+  } else {
+    recursiveFunction(number - 1);
+  }
+};
+
+/////// setTimeout() ///////
+/* execute a piece of code after a certain time, it is asynchronous
+it takes 2  arguments, a callback function and a time*/
+setTimeout(() => {
+  console.log("Code");
+}, 1000);
+
 // ======================================
 // 7. OBJECTS
 // ======================================
@@ -591,6 +630,12 @@ console.log(Number("10")); // 10
 console.log(Number("abc")); // NaN
 console.log(Number(true)); // 1
 console.log(Number(false)); // 0
+
+/////// String() ///////
+/* convert a value into a string */
+const num2 = 5;
+console.log(String(num2)); // "5"
+console.log(String(null)); // "null"
 
 // ======================================
 // 13. HTML ELEMENT

@@ -113,6 +113,21 @@ the abscence of value
 array like object
 
 ## Global error flag
- A variable used to keep track of whether an error has occurred during program execution.
+A variable used to keep track of whether an error has occurred during program execution.
+
+## Recursion
+Programming concept where a function calls itself
+
+## Base case
+when the function stops calling itself
+
+## Recursive case
+where the function calls itself
+
+## Stack
+data structure where items are stored in a LIFO, last-in-first-out, manner
+
+## call stack
+collection of function calls stored in a stack structure, When you call a function, it is added to the top of the stack, and when it returns, it is removed from the top / end of the stack
 
 ```
