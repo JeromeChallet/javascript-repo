@@ -43,7 +43,7 @@ When the #number element contains the number 3999 and the #convert-btn element i
 
 const numberInput = document.getElementById("number");
 const convertBtn = document.getElementById("convert-btn");
-const result = document.getElementById("result");
+const result = document.getElementById("output");
 
 const romanNumerals = [
   { value: 1000, numeral: "M" },
@@ -78,12 +78,12 @@ const decimalToRoman = (input) => {
 const checkUserInput = () => {
   const inputInt = parseInt(numberInput.value);
   if (inputInt < 1) {
-    alert("Please enter a number greater than or equal to 1");
+    result.textContent = "Please enter a number greater than or equal to 1";
     return;
   } else if (inputInt > 3999) {
-    alert("Please enter a number less than or equal to 3999");
+    result.textContent = "Please enter a number less than or equal to 3999";
   } else if (!numberInput.value || isNaN(inputInt)) {
-    alert("Please enter a valid number");
+    result.textContent = "Please enter a valid number";
   } else {
     result.textContent = decimalToRoman(inputInt);
     numberInput.value = "";
