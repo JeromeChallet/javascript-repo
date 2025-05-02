@@ -309,6 +309,11 @@ const removedFruits = fruits2.splice(1, 2);
 console.log(fruits2); // [ 'mango', 'banana', 'apple' ]
 console.log(removedFruits); // [ 'date', 'cherry' ]
 
+/////// .some() ///////
+/* Accepts a callback function which should take an element of the array as the argument to return a bolean */
+const arr = ["A", "b", "C"];
+arr.some((letter) => letter === letter.toUpperCase()); //true
+
 // ======================================
 // 5. LOOPS
 // ======================================
@@ -370,6 +375,12 @@ const nameArrowFunction = (name) => {
   console.log(`Hello, ${name}!`);
 };
 nameArrowFunction();
+
+/////// Implicit Return ///////
+/* the function automatically returns the result of the expression without using the return keyword or curly braces ({}) 
+only for arrow functions*/
+const add = (a, b) => a + b;
+console.log(add(2, 3)); // 5
 
 /////// Callback Function ///////
 /* A function that is passed to another function as an argument,
@@ -552,11 +563,16 @@ const { name, isDeveloper } = destructuredObj;
 // ======================================
 /* Regular expressions match specific characters in a string.
 Wrap the characters you want to match with [].
+must put a space between the expression and the string to match
+flags:
 - /s: matches empty space
 - /g: global (keeps looking until it finds all matches)
 - /i: case insensitive
 - +: matches a pattern that occurs one or more times
-- \d: matches digits [0-9] */
+- \d: matches digits [0-9] 
+- (?:a|b): will match either a or b, but it will not capture the result
+- ^: match the beginning or end of the text
+- $: match the end of the string*/
 const regex = /[+-\s]/;
 const regex2 = /[0-9]+e[0-9]+/i;
 
@@ -565,6 +581,27 @@ const regex2 = /[0-9]+e[0-9]+/i;
 const str = "example string";
 const regex3 = /example/;
 const result = str.match(regex); // Returns ['example']
+
+/////// .test() ///////
+/* test if a string matches the pattern but unlike .match will return a bolean */
+const result2 = str.test(regex); // true
+
+/////// character class ///////
+/* set of characters enclosed in square brackets [] that tells the regex engine to match any one character from that set */
+const regex0 = /[aeiou]/;
+
+/////// alternance sequence | ///////
+/* to match either the text on the left or the text on the right of the | */
+const regex4 = /yes|no/;
+
+/////// capture group ///////
+/* way to define a part of the expression that should be captured and saved for later reference
+by wrapping a part of your expression in parentheses */
+const regex5 = /h(i|ey) camper/; // would match either hi camper or hey camper and would capture i or ey in a group
+
+/////// optional match? ///////
+/* matches the precedent element only */
+const regex6 = /colou?r/; // matches both color and colour, because the u is optional
 
 // ======================================
 // 10. Additional Notes
