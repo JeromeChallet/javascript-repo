@@ -250,7 +250,8 @@ const combinedArr = [...arr1, ...arr2];
 console.log(combinedArr); // Output: [1, 2, 3, 4, 5, 6]
 
 /////// .map() ///////
-/* Iterates through an array and return a new array */
+/* Iterates through an array and return a new array 
+its first argument is a callback function*/
 const numbers = [1, 2, 3];
 const doubledNumbers = numbers.map((number) => number * 2); // [2, 4, 6]
 
@@ -262,9 +263,14 @@ const sentence = exampleArr.join(" "); // Separator takes a space character
 console.log(sentence); // Output: "This is a sentence"
 
 /////// .sort() ///////
-/* Converts elements of an array into strings and sorts them in place based on their values in the UTF-16 encoding */
+/* Converts elements of an array into strings and sorts them in place based on their values in the UTF-16 encoding 
+but it mutates the original array*/
 const names = ["Tom", "Jessica", "Quincy", "Naomi"];
 names.sort(); // ["Jessica", "Naomi", "Quincy", "Tom"]
+
+/////// .toSorted() ///////
+/* like sort() but does not mutate the original array */
+names.toSorted(); // ["Jessica", "Naomi", "Quincy", "Tom"]
 
 /////// .find() ///////
 /* Retrieves the first element within an array that fulfills the conditions specified in the provided callback function. 
@@ -324,8 +330,48 @@ console.log(removedFruits); // [ 'date', 'cherry' ]
 const arr = ["A", "b", "C"];
 arr.some((letter) => letter === letter.toUpperCase()); //true
 
+/////// .reduce() ///////
+/* takes an array and applies a callback function to condense the array into a single value
+The return value for the callback becomes the value of the accumulator on the next iteration
+accumulator starts at 0 and the currentValue is the initial value 
+then the function adds each element (currentValue) to the accumulator 3 + 1 + 5 + 6 = 15*/
+// array.reduce((accumulator, element) => {});
+const numbers3 = numbers2.reduce((accumulator, currentValue) => {
+  return accumulator + currentValue;
+}, 0); // 15
+
+/////// even or odd array elements ///////
+// if 0 its even, if 1 then odd
+const isEven = arr.length % 2 === 0;
+
+/////// median element of an array ///////
+// for odd number of elements
+const middleNumber = arr[Math.floor(arr.length / 2)];
+// for even number of elements
+const getMean = (array) =>
+  array.reduce((acc, el) => acc + el, 0) / array.length;
+// first middle number
+const firstMiddleNumber = numbers[numbers.length / 2];
+// second middle number
+const secondMiddleNumber = numbers[numbers.length / 2 - 1];
+getMean([firstMiddleNumber, secondMiddleNumber]);
+
+/////// Counting occurrences in an array ///////
+/* Uses .forEach() to count how many times each value appears in an array.
+Stores the result in an object where each key is the number and its value is the count. */
+const numbersArr = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4];
+const counts = {};
+numbersArr.forEach((el) => {
+  if (counts[el]) {
+    counts[el] += 1;
+  } else {
+    counts[el] = 1;
+  }
+});
+console.log(counts); // { '1': 3, '2': 3, '3': 3, '4': 3, '5': 2 }
+
 // ======================================
-// 5. LOOPS
+// 6. LOOPS
 // ======================================
 /////// FOR loop ///////
 for (iterator; condition; iteration) {}
@@ -442,8 +488,52 @@ setTimeout(() => {
 }, 1000);
 
 // ======================================
-// 7. OBJECTS
+// 7. OBJECT CLASS
 // ======================================
+/* built-in global class. It's not referring to any object you created, but rather to the global Object class that provides static methods */
+
+/////// Set ///////
+/* Built-in JavaScript object that stores unique values.
+It automatically removes duplicates from an array or list of values.
+Useful for checking if all values in a collection are unique. */
+
+// Removing duplicates from an array
+const nums = [1, 2, 2, 3, 4, 4];
+const uniqueNums = [...new Set(nums)];
+console.log(uniqueNums); // [1, 2, 3, 4]
+
+// Check if all values in an array are the same
+const values1 = [5, 5, 5];
+const allSame = new Set(values1).size === 1;
+console.log(allSame); // true
+
+/////// Object.keys() ///////
+/* Returns an array of the keys (property names) of an object */
+const obj = { a: 1, b: 2 };
+const keys = Object.keys(obj); // ["a", "b"]
+
+/////// Object.values() ///////
+/* Returns an array of the values in an object */
+const values2 = Object.values2(obj); // [1, 2]
+
+/////// Object.entries() ///////
+/* Returns an array of [key, value] pairs from the object */
+const entries = Object.entries(obj); // [["a", 1], ["b", 2]]
+
+/////// Object.fromEntries() ///////
+/* Converts an array of [key, value] pairs back into an object */
+const objBack = Object.fromEntries([
+  ["a", 1],
+  ["b", 2],
+]);
+// { a: 1, b: 2 }
+
+/////// Object.assign() ///////
+/* Copies properties from source objects into a target object */
+const target = { a: 1 };
+const source = { b: 2 };
+Object.assign(target, source); // { a: 1, b: 2 }
+
 /* you use access and modify their data through properties
 unlike arrays that you can access through indexes 
 the key is the name of the property and the value is the data stored in it
@@ -476,6 +566,16 @@ Math.abs(num); // 5
 /*  Produces random values that are either positive or negative. */
 const names2 = ["Tom", "Jessica", "Quincy", "Naomi"];
 names2.sort(() => Math.random() - 0.5);
+
+/////// Math.pow() ///////
+// calculate exponents
+const base = 4;
+const exponent = 0.5;
+Math.pow(base, exponent); // returns 2
+
+/////// Math.sqrt() ///////
+// finds the square root of a number
+Math.sqrt(base); // returns 2
 
 /////// Object.freeze(obj) ///////
 /* freezes the object and prevent any changes being made to it 
@@ -635,6 +735,10 @@ function greet(name) {
   console.log(`Hello, ${name}!`);
 }
 const foundNumber2 = numbers1.find((number) => number > 25);
+
+/////// ** ///////
+// To square a value
+const square = 3 ** 2; // 9
 
 // ======================================
 // 11. USER INTERACTION

@@ -138,4 +138,8 @@ Finds the smallest value in the array, then swapps it with the first value in th
 
 ## insertionSort algorythm
 Builds up a sorted array at the beginning of the list. The sorted array is the first element. Then it inspects the next element and swaps it backward into the sorted array until it is in a sorted position.
+
+## the mode
+If multiple numbers in a series occur at the same highest frequency, they are all considered the mode. Otherwise, the mode is the number that occurs most often, that single number is the mode.
+
 ```
