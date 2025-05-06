@@ -16,6 +16,10 @@ document.querySelector("#demo").innerHTML = "hello";
 <h1 id="title">Main title</h1>;
 const mainTitleElement = document.getElementById("title");
 
+/////// .getElementsByClassName() ///////
+/* to access all the element with the same class name in an array */
+const inputValues = document.getElementsByClassName("values-dropdown");
+
 /////// .querySelector() ///////
 /*  select and return the first element in the DOM that matches */
 const button1 = document.querySelector("#button1");
@@ -231,6 +235,12 @@ if (numbersArray.includes(number)) {
   console.log("The number is in the array.");
 }
 
+/////// For Each loop ///////
+/* loop through an array and perform a function on each element of the array */
+numbers1.forEach((number) => {
+  console.log(number); // 10, 20, 30, 40, 50
+});
+
 /////// ... ///////
 /* Copy all elements from one array into another
 or concatenate multiple arrays into one */
@@ -337,12 +347,6 @@ while (condition) {
   logic;
   condition = false;
 }
-
-/////// For Each loop ///////
-/* loop through an array and perform a function on each element of the array */
-numbers1.forEach((number) => {
-  console.log(number); // 10, 20, 30, 40, 50
-});
 
 /* to desctructure the date to be used, use {} in the param() */
 taskData.forEach(({ id, title, date, description }) => {});

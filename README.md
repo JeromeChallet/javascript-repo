@@ -95,10 +95,10 @@ myFunction(arg[0])
 num += 5
 
 ## Ternary operator
-condition ? expressionIfTrue : expressionIfFalse
+ondition ? expressionIfTrue : expressionIfFalse
 
 ## Reference Error
-when a non existant var is referenced
+When a non existant var is referenced
 
 ## Type Error
 The code is trying to perform an operation on a value that is not of the expected type
@@ -110,7 +110,7 @@ Common practice to indicate the var is a bool
 the abscence of value
 
 ## NodeList
-array like object
+Array like object
 
 ## Global error flag
 A variable used to keep track of whether an error has occurred during program execution.
@@ -119,15 +119,23 @@ A variable used to keep track of whether an error has occurred during program ex
 Programming concept where a function calls itself
 
 ## Base case
-when the function stops calling itself
+When the function stops calling itself
 
 ## Recursive case
-where the function calls itself
+Where the function calls itself
 
 ## Stack
-data structure where items are stored in a LIFO, last-in-first-out, manner
+Data structure where items are stored in a LIFO, last-in-first-out, manner
 
 ## call stack
-collection of function calls stored in a stack structure, When you call a function, it is added to the top of the stack, and when it returns, it is removed from the top / end of the stack
+Collection of function calls stored in a stack structure, When you call a function, it is added to the top of the stack, and when it returns, it is removed from the top / end of the stack
 
+## bubbleSort algorythm
+Sorting algorithm which starts at the beginning of the array and 'bubbles up' unsorted values towards the end, iterating through the array until it is completely sorted
+
+## selectionSort algorythm
+Finds the smallest value in the array, then swapps it with the first value in the array. Then, it finds the next smallest value in the array, and swaps it with the second value in the array. It continues iterating through the array until it is completely sorted
+
+## insertionSort algorythm
+Builds up a sorted array at the beginning of the list. The sorted array is the first element. Then it inspects the next element and swaps it backward into the sorted array until it is in a sorted position.
 ```
