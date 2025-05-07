@@ -122,7 +122,7 @@ resetButton.id = "reset";
 /*  Set an aria-label attribute to an element*/
 resetButton.resetButton.ariaLabel = "Reset playlist";
 
-/////// appendChild() ///////
+/////// .appendChild() ///////
 /*   Add a node or an element as the child of another element*/
 const parentElement = document.createElement("button");
 const parentElementText = document.createTextNode("Click me");
@@ -594,6 +594,59 @@ console.log(objFrozen.newProp); // Output: undefined
 delete objFrozen.name; // Cannot delete properties
 console.log(objFrozen.name); // Output: "Jerome"
 
+/////// Array() Constructor ///////
+/* Creates a new array instance.
+If given a single number, it creates an array with that length (but uninitialized slots).
+If given multiple values, it creates an array containing those elements. */
+
+// Create an empty array with 3 slots (uninitialized)
+const emptyArray = new Array(3);
+console.log(emptyArray); // [ <3 empty items> ]
+
+// Create an array with specific values
+const filledArray = new Array(1, 2, 3);
+console.log(filledArray); // [1, 2, 3]
+
+// Fill an array of length 5 with the number 0
+const zeroes = new Array(5).fill(0);
+console.log(zeroes); // [0, 0, 0, 0, 0]
+
+///////.fill() ///////
+/* fills an array with a value */
+/////// .fill() ///////
+/* Fills an array with a static value. 
+It modifies the original array and returns it.
+Optionally, you can specify a start and end index. */
+const arr3 = new Array(5).fill(0); // [0, 0, 0, 0, 0]
+// Fill part of an array from index 1 to 3 (not inclusive of end index)
+const partialFill = [1, 2, 3, 4, 5].fill(9, 1, 3); // [1, 9, 9, 4, 5]
+
+/////// String() Constructor ///////
+/* Converts any value to a string or creates a String object.
+Useful for type conversion. */
+
+const str4 = String(123); // "123"
+const str5 = String(true); // "true"
+const str6 = new String("hello"); // String object, not a primitive
+console.log(typeof str4); // "string"
+console.log(typeof str6); // "object"
+
+/////// .hasOwnProperty() ///////
+/*  check if a property on a given object exists or not */
+const developerObj = {
+  name: "John",
+  age: 34,
+};
+
+developerObj.hasOwnProperty("name"); // true
+developerObj.hasOwnProperty("salary"); // false
+
+/////// .every() ///////
+/* accepts a callback function which should take an element of the array as the argument. 
+Will return true if the callback function returns true for all elements in the array */
+const arr5 = ["A", "b", "C"];
+arr5.every((letter) => letter === letter.toUpperCase());
+
 // ======================================
 // 8. OBJECT ORIENTED JAVASCRIPT
 // ======================================
@@ -740,6 +793,8 @@ const foundNumber2 = numbers1.find((number) => number > 25);
 // To square a value
 const square = 3 ** 2; // 9
 
+//  In JavaScript, it is common convention to prefix an unused parameter with an underscore _
+
 // ======================================
 // 11. USER INTERACTION
 // ======================================
@@ -762,6 +817,13 @@ button.addEventListener("click", () => {
 /* detects when the value of an HTML element has changed */
 htmlElement.addEventListener("change", () => {});
 
+/////// .onchange ///////
+// define what should happen when the change event occurs on an HTML element
+const inputElement = document.querySelector("#myInput");
+inputElement.onchange = function () {
+  console.log("Input value changed!");
+};
+
 // ======================================
 // 12. DATA TYPE CONVERSION
 // ======================================
@@ -776,15 +838,21 @@ console.log(Number("abc")); // NaN
 console.log(Number(true)); // 1
 console.log(Number(false)); // 0
 
-/////// String() ///////
-/* convert a value into a string */
-const num2 = 5;
-console.log(String(num2)); // "5"
-console.log(String(null)); // "null"
-
 // ======================================
 // 13. HTML ELEMENT
 // ======================================
 /////// Audio() ///////
 /* creates an audio element */
 const audio = new Audio();
+
+// ======================================
+// 14. STRING METHODS
+// ======================================
+/////// startsWith ///////
+/* Checks if a string starts with a specific substring.  
+Returns true if it does, false otherwise.  
+Case-sensitive. */
+
+const greeting2 = "Hello, world!";
+console.log(greeting2.startsWith("Hello")); // true
+console.log(greeting2.startsWith("hello")); // false

@@ -142,4 +142,14 @@ Builds up a sorted array at the beginning of the list. The sorted array is the f
 ## the mode
 If multiple numbers in a series occur at the same highest frequency, they are all considered the mode. Otherwise, the mode is the number that occurs most often, that single number is the mode.
 
+## currying
+Returning a function within a function
+
+## closure
+Allows a function to "remember" the variables from its outer scope, even after that outer function has finished executing
+
+## function reference
+Function name without the parentheses const newArray = array.map(funcRef);
+
+
 ```
